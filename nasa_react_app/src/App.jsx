@@ -7,16 +7,16 @@ import { useState } from 'react';
 function App() {
   const [showModal, setShowModal] = useState(false)
 
-  function handleDisplayModal() {
-    
+  function handleToggleModal() {
+    setShowModal(!showModal)
   }
   return (
     <>
     <Main />
     {showModal && (
-      <SideBar />
+      <SideBar handleToggleModal={handleToggleModal} />
       )}
-    <Footer />
+    <Footer handleToggleModal={handleToggleModal} />
     </>
   )
 }
